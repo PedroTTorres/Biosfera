@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
         final int ROWS = 48;
         final int COLUMNS = 3;
-        final int INITIAL_VALUES = 24;
+        final int INITIAL_VALUES = 24; //dados gerados inicialmente
 
         // definindo a data e hora inicial como 00:00 de ontem
         LocalDateTime dateTime = LocalDateTime.now().minusDays(1).withHour(0).withMinute(0).withSecond(0).withNano(0);
@@ -44,7 +44,7 @@ public class Main {
                             sensorCode = SensorCode.SENSOR_3;
                             break;
                         default:
-                            System.out.println("Número do Sensor inválido");
+                            System.out.println("Número do conjuto de sensores inválido");
                             break;
                     }
                     showSensorData(sensorSets, sensorCode);
@@ -57,11 +57,11 @@ public class Main {
                     sensorCode = null;
                     System.out.println("Selecione o número do conjuto de sensores (1-3) para adicionar os dados:");
                     sensorNumber = scanner.nextInt();
-                    System.out.print("Temperatura: ");
+                    System.out.print("Temperatura (°C): ");
                     double temperature = scanner.nextDouble();
-                    System.out.print("Umidade: ");
+                    System.out.print("Umidade (%): ");
                     double humidity = scanner.nextDouble();
-                    System.out.print("CO2: ");
+                    System.out.print("CO2 (ppm): ");
                     double co2 = scanner.nextDouble();
 
                     switch (sensorNumber) {
@@ -75,7 +75,7 @@ public class Main {
                             sensorCode = SensorCode.SENSOR_3;
                             break;
                         default:
-                            System.out.println("Número do Sensor inválido");
+                            System.out.println("Número do conjuto de sensores inválido");
                             break;
                     }
 
